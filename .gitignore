@@ -1,6 +1,16 @@
+# Python
+__pycache__/
 *.pyc
-venv
+
+# Virtual env
+venv/
+.venv/
+
+# Environment variables
 .env
 
+# VS Code
+.vscode/
 
-
+# Alembic cache
+*.db
