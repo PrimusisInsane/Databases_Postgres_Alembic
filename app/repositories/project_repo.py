@@ -11,3 +11,30 @@ def create_project(db: Session, name: str, owner_id: int):
 
 def get_projects(db: Session):
     return db.query(Project).all()
+
+
+def get_project_by_id(db: Session, project_id: int):
+    return db.query(Project).filter(Project.id == project_id).first()
+
+def delete_project(db: Session, project_id: int):
+    project = db.query(Project).filter(Project.id == project_id).first()
+    if project:
+        db.delete(project)
+        db.commit()
+        return True
+    return False
+
+
+def update_project(db: Session, project_id: int, name: str = None, owner_id: int = None):
+    project = db.query(Project).filter(Project.id == project_id).first()
+    if not project:
+        return None
+    if name is not None:
+        project.name = name
+    if owner_id is not None:
+        project.owner_id = owner_id
+    db.commit()
+    db.refresh(project)
+    return project
+
+
