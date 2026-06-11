@@ -1,7 +1,6 @@
-*_pyc
+*pyc
+venv
 .env
-__pycache__/
-venv/
 
-# Ignore Jupyter Notebook checkpoints
-.ipynb_checkpoints/
+
+
