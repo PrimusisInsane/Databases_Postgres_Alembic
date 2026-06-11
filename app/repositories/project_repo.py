@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 from app.models.project_model import Project
 
-def create_project(db: Session, name: str, owner_id: int):
-    project = Project(name=name, owner_id=owner_id)
+def create_project(db: Session, name: str, project_id: int):
+    project = Project(name=name, id=project_id)
     db.add(project)
     db.commit()
     db.refresh(project)
@@ -25,14 +25,12 @@ def delete_project(db: Session, project_id: int):
     return False
 
 
-def update_project(db: Session, project_id: int, name: str = None, owner_id: int = None):
+def update_project(db: Session, project_id: int, name: str = None):
     project = db.query(Project).filter(Project.id == project_id).first()
     if not project:
         return None
     if name is not None:
         project.name = name
-    if owner_id is not None:
-        project.owner_id = owner_id
     db.commit()
     db.refresh(project)
     return project
