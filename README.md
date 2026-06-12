@@ -122,7 +122,7 @@ docker exec -it <container_name> psql -U <username> -d <database>
 ![Tasks' table](images/task_table.jpg)
 
 ### Relationships
-![Relationship among them](images/relationship.jpg)
+![Relationship among them](images/fullrelationship.jpg)
 
 ---
 
