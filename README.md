@@ -130,3 +130,7 @@ docker exec -it <container_name> psql -U <username> -d <database>
 The biggest upgrade from the previous version is persistence. Previously, all data 
 was lost on server shutdown. With PostgreSQL and MongoDB now integrated, data 
 survives restarts and the system is observable at all times.
+
+
+## Miscellanous 
+There is a base.py that is empty that Iam saving for future use, same goes for logger.py inside utils sub directory. I might need it later for either next week's assessment for my own personal use. 
